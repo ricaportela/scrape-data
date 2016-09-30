@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "template.html" %}
+{% block content %}
+   <h1> Dados de Pesquisa </h1>
+      <form method="POST">
+         Palavra-Chave<br>
+         <input type="text"  name="palavra" value="{{request.form.palavra}}"><br>
+         URL<br>
+         <input type="text"  size="100" name="url_pesquisa" value="{{request.form.url_pesquisa}}"><br>
+         <input type="submit"  type="submit" value="Pesquisar">
+       </form>
+
+
+{% endblock %}

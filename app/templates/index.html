@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends 'template.html' %}
+{% block content %}
+
+<div class="jumbo">
+  {% if error %}
+
+  <p><strong> palvra-chave:</strong> {{ error }} </p>
+  {% else %}
+
+
+  <p><strong> palvra-chave:</strong> {{ palavra }} </p>
+  <p><strong> URL:</strong> {{ url_pesquisa }} </p>
+  <p><strong> Total Encontrado de Ocorrencias:</strong> </p>
+  <p><strong> texto:</strong> {{ texto }} </p>
+
+
+  {% endif %}
+
+</div>
+
+{% endblock %}
