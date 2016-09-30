@@ -1,6 +1,7 @@
 import pytest
-
+import json
 from app.aplica import app
+
 
 @pytest.mark.usefixtures('client_class')
 class TestApp:
@@ -10,5 +11,7 @@ class TestApp:
 
     def test_search(self):
         resp = self.client.get("/search/wordcounts/")
-        assert response.data.decode('utf-8') == jsonify ({})
-        assert response.status_code == 200
+        assert resp  == json.loads(resp.data.decode())
+        import ipdb; ipdb.set_trace()
+
+        assert resp.status_code == 200
