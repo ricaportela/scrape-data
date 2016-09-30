@@ -9,6 +9,6 @@ class TestApp:
         return app
 
     def test_search(self):
-        responde = self.client.get("/search/wordcounts/")
-        assert response.data.decode('utf-8') == "<h1> Testando com palavra... </h1>"
+        resp = self.client.get("/search/wordcounts/")
+        assert response.data.decode('utf-8') == jsonify ({})
         assert response.status_code == 200
