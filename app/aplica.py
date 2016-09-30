@@ -26,11 +26,9 @@ wordcounts = [
 def search():
     return jsonify ( { 'wordcounts': wordcounts } )
 
-@app.route("/search/wordcounts/<int:word_id>", methods=['GET'])
-def search_id(word_id):
-    wordcount = filter (lambda t: t['id'] == word_id, wordcounts)
-    if len(wordcount) == 0:
-        abort(404)
+@app.route("/search/wordcounts/<str:keyword>", methods=['GET'])
+def search_word(keyword):
+    
     return jsonify ( { 'wordcounts': wordcount[0] } )
 
 
