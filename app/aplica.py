@@ -36,8 +36,7 @@ def search_keyword():
     for item in wordcounts:
         if item['keyword'] == query:
             return jsonify({'wordcounts' : [item]})
-    return jsonify ({})
-
+    
 
 
 if __name__ == "__main__":
