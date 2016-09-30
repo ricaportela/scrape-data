@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 from collections import Counter
 from nltk.corpus import stopwords
 
-def scrapy_function(url_pesquisa=None, palavra=None, texto=None):
+def scrape_function(url_pesquisa=None, palavra=None, texto=None):
     pagina = urlopen(url_pesquisa)
     soup = BeautifulSoup(pagina, "lxml")
     texto = soup.get_text()
