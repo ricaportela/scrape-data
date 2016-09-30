@@ -22,22 +22,12 @@ wordcounts = [
 ]
 
 
-@app.route("/search/wordcounts", methods=['GET'])
-def search():
-    return jsonify ( { 'wordcounts': wordcounts } )
-
-@app.route("/search/wordcounts/<int:id>", methods=['GET'])
-def search_id(id):
-    return jsonify ( { 'wordcounts': wordcounts[id] } )
-
 @app.route("/search/wordcounts/<keyword>", methods=['GET'])
 def search_keyword():
     query = request.args.get('query', '')
     for item in wordcounts:
         if item['keyword'] == query:
-            return jsonify({'wordcounts' : [item]})
-    
-
+            return jsonify({'wordcounts': [item]})
 
 if __name__ == "__main__":
     app.run(debug=True)
