@@ -10,8 +10,26 @@ class TestApp:
         return app
 
     def test_search(self):
-        resp = self.client.get("/search/wordcounts/")
-        assert resp  == json.loads(resp.data.decode())
-        import ipdb; ipdb.set_trace()
+        resp = self.client.get("/search/wordcounts")
+        assert resp.json == {
+                              "wordcounts": [
+                                {
+                                  "id": 1,
+                                  "keyword": "Microfocus",
+                                  "value": 45
+                                },
+                                {
+                                  "id": 2,
+                                  "keyword": "Programador",
+                                  "value": 33
+                                },
+                                {
+                                  "id": 34,
+                                  "keyword": "Cobol",
+                                  "value": 3
+                                }
+                              ]
+                            }
+        #import ipdb; ipdb.set_trace()
 
         assert resp.status_code == 200
