@@ -30,6 +30,19 @@ class TestApp:
                                 }
                               ]
                             }
-        #import ipdb; ipdb.set_trace()
+
+        assert resp.status_code == 200
+
+    def test_search_id(self):
+        resp = self.client.get("/search/wordcounts/0")
+        assert resp.json == {
+                              "wordcounts": [
+                                {
+                                  "id": 1,
+                                  "keyword": "Microfocus",
+                                  "value": 45
+                                }
+                              ]
+                            }
 
         assert resp.status_code == 200
