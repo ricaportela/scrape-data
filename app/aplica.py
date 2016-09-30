@@ -28,8 +28,7 @@ def search():
 
 @app.route("/search/wordcounts/<str:keyword>", methods=['GET'])
 def search_word(keyword):
-    
-    return jsonify ( { 'wordcounts': wordcount[0] } )
+    return jsonify ({})
 
 
 if __name__ == "__main__":
