@@ -19,12 +19,14 @@ wordcounts = [
 ]
 
 
-@app.route("/search", methods=['GET'])
-def search_keyword():
-    query = request.args.get('query', '')
+@app.route("/search/<keyword>", methods=['GET'])
+def search_keyword(keyword):
     for item in wordcounts:
-        if item['keyword'] == query:
+        if item['keyword'] == keyword:
             return jsonify({'wordcounts': [item]})
+        else:
+            print("deu erro !!")
+
     return jsonify({})
 
 if __name__ == "__main__":

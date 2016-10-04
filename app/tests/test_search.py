@@ -10,7 +10,7 @@ class TestApp:
         return app
 
     def test_search_keyword(self):
-        resp = self.client.get("/search?query=Microfocus")
+        resp = self.client.get("/search/Microfocus")
         assert resp.json == {"wordcounts": [{
                              "keyword": "Microfocus",
                              "value": 45
